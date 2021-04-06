@@ -32,10 +32,8 @@ if __name__ == '__main__':
     print(res.json())
 
     # Create artifacts for 2 versions of a 3D model
-    # file_names = ['model1.hbjson', 'model2.hbjson']
+    file_names = ['model1.hbjson', 'model2.hbjson']
 
-    # TODO: Reenable multiple models when they are working
-    file_names = ['model1.hbjson']
     arguments = []
 
     for name in file_names:
@@ -50,7 +48,8 @@ if __name__ == '__main__':
             source=project_artifact
         )
 
-        arguments.append(model_argument)
+        # Wrap each argument in its own list to parameterize
+        arguments.append([model_argument])
 
     # Construct source URL for recipe
     recipe_source_url = '/'.join(
@@ -65,7 +64,7 @@ if __name__ == '__main__':
     )
 
     # Create a job
-    job = Payload.Job(source=recipe_source_url, arguments=[arguments])
+    job = Payload.Job(source=recipe_source_url, arguments=arguments)
     res = client.create_job(project.name, job)
     print(res.json())
 

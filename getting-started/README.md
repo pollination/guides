@@ -191,7 +191,8 @@ console...
 
 #### Congratulations!
 
-You have the basic pieces in place to build a custom application using the Pollination API.
+You have the basic pieces in place to build a custom application using the
+Pollination API.
 
 The next section will use a module that is significantly larger, but
 essentially the same as this one.
@@ -217,18 +218,15 @@ simulation parameterized across multiple models and settings simply by
 submitting different lists of inputs.
 
 We will use two models two show how to run the same simulation with two options
-for a facade system. You can download the models from these links:
+for a facade system. The models are included as siblings to the Python source
+files in the [`rest-api`](./rest-api) folder.
 
-- [Model 1][m1]
-- [Model 2][m2]
+You should be able to open a console from inside the same folder, run `pip install -r requirements.txt`, run `python main.py`, and watch as the script
+creates a parametric job with runs for each of the two models.
 
-These should be saved in the `rest-api` folder.
-
-[m1]: https://storage.googleapis.com/pollination-public/blobs/dev-guide/model1.hbjson
-[m2]: https://storage.googleapis.com/pollination-public/blobs/dev-guide/model2.hbjson
-
-After downloading the models to the `rest-api` folder, you should be able to
-open a console from inside the same folder, run `pip install -r requirements.txt`, run `python main.py`, and watch as the script creates
+Because Pollination scales compute to meet a Job's demand, running the two
+simulations in parallel takes about the same amount of time as running either
+of the individually.
 
 #### Explanation
 
@@ -308,7 +306,8 @@ for name in file_names:
         source=project_artifact
     )
 
-    arguments.append(model_argument)
+    # Wrap each argument in its own list to parameterize
+    arguments.append([model_argument])
 ```
 
 #### Simulate! (Create a Job)
@@ -332,7 +331,7 @@ recipe_source_url = '/'.join(
 )
 
 # Create a job
-job = Payload.Job(source=recipe_source_url, arguments=[arguments])
+job = Payload.Job(source=recipe_source_url, arguments=arguments)
 res = client.create_job(project.name, job)
 ```
 
@@ -395,6 +394,10 @@ for run in body['resources']:
     # Save to a local file
     urlretrieve(url, f'{run_id}-{run_output_name}.zip')
 ```
+
+You should see two files created on your local machine, named for the UUID of
+the run that Pollination executed. Inside each file will be the simulation
+results for the corresponding 3D model.
 
 ### Fin
 
