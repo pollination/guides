@@ -262,13 +262,22 @@ client = PollinationClient()
 
 We create a public project with a meaningful name and description. The name
 will be necessary to create further resources tied to the project, so this is a
-useful object to keep around.
+useful object to keep around for the rest of the script to refer to.
+
+The project only needs to be created once and can be used for as many jobs as
+necessary. If you run the script multiple times, you will notice that, on
+subsequent invocations, the response indicates a project with the name already
+exists. This is safe to run as Pollination will simply respond with an "already
+exists" status to calls that attempt to create a project with the same name as
+one that exists in an account.
+
+We will set the `public` field to `False` since this is just a test project.
 
 ```python
 project = Payload.Create(
     name='good-project',
     description='A very good project',
-    public=True
+    public=False
 )
 ```
 

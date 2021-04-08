@@ -17,7 +17,7 @@ if __name__ == '__main__':
     project = Payload.Create(
         name='good-project',
         description='A very good project',
-        public=True
+        public=False
     )
     res = client.create_project(project)
     print(res.json())
