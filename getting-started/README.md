@@ -276,7 +276,7 @@ client = PollinationClient()
 
 #### Project
 
-We create a public project with a meaningful name and description. The name
+We create a project with a meaningful name and description. The name
 will be necessary to create further resources tied to the project, so this is a
 useful object to keep around for the rest of the script to refer to.
 
@@ -304,7 +304,8 @@ grows, it could be refactored into its own module.
 #### Recipe Filter
 
 The recipe filters applied to a project affect which recipes are available to
-be used for future jobs. Here, we select a simple public recipe for calculating daylight factor which is provided by Ladybug Tools.
+be used for future jobs. Here, we select a simple public recipe for calculating
+daylight factor which is provided by Ladybug Tools.
 
 ```python
 recipe_filter = Payload.RecipeFilter(
