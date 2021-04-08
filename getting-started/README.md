@@ -281,6 +281,10 @@ project = Payload.Create(
 )
 ```
 
+The `Payload` class is a simple namespace to organize the objects that we
+need to send as the bodies in our requests. As our hypothetical application
+grows, it could be refactored into its own module.
+
 #### Recipe Filter
 
 The recipe filters applied to a project affect which recipes are available to
