@@ -402,7 +402,7 @@ results for the corresponding 3D model.
 ### Fin
 
 And that's it! You have now created a project and used it to create a
-parametric job to calculate the annual daylight factor of two different 3D
+parametric job to calculate the daylight factor of two different 3D
 models simultaneously!
 
 ## Use a Client SDK
