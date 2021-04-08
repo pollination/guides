@@ -4,13 +4,10 @@ Get up and simulating with the Pollination API!
 
 This guide has three sections:
 
-1. Obtain an API key
-2. Use the REST API directly
-   - This section is longer to demonstrate how a custom application might
-     integrate with Pollination.
-3. Use the REST API with a client SDK
-   - This section will be shorter to show some existing tools that can make
-     development easier.
+1. [Obtain an API key](#obtain-api-key)
+2. [Use the REST API directly](#use-the-rest-api)
+   - Write a simple "get my user" application
+   - Examine a longer "Start job, monitor, retrieve results" application
 
 ## Prerequisites
 
@@ -404,5 +401,3 @@ results for the corresponding 3D model.
 And that's it! You have now created a project and used it to create a
 parametric job to calculate the daylight factor of two different 3D
 models simultaneously!
-
-## Use a Client SDK
