@@ -306,8 +306,15 @@ input arguments to the recipes. If you wanted to upload a different model to
 use as an input, it would need to be present on your local machine and uploaded
 in the same way.
 
-Here, we upload the two models that are included next to the script and also
-use the `queenbee` library to create a list of `arguments` to the recipe.
+The two sample models are simple representations of a facade system with two
+different shading options for which we would like to calculate the daylight
+factor.
+
+![model1](./assets/model1.png)
+![model2](./assets/model2.png)
+
+Here, we upload the two models and use the `queenbee` library to create a list
+of `arguments` to the recipe.
 
 The `arguments` variable is a list of lists. The first level of the list will
 be in 1:1 correspondence with the runs that are created. The second level
