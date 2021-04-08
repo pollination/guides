@@ -54,6 +54,10 @@ class Payload:
 
             Assumes a file named `self.key` exists in the directory where
             `python` is executed.
+
+            We use a new httpx client here because the files are actually
+            sent to Pollination's bulk storage server which is hosted on a
+            different domain.
             """
             with open(self.key, 'rb') as fp:
                 files = {'file': (self.key, fp)}
@@ -135,8 +139,7 @@ class PollinationClient(httpx.Client):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
-        # TODO: change this to production when recipes are working
-        self.base_url = 'https://api.staging.pollination.cloud'
+        self.base_url = 'https://api.pollination.cloud'
 
         self.headers['x-pollination-token'] = os.environ['POLLINATION_API_KEY']
 
@@ -297,7 +300,7 @@ class PollinationClient(httpx.Client):
 
     def get_runs(self, project_name: str, job_id: str):
         """
-        Schema: https://api.staging.pollination.cloud/redoc#operation/list_runs
+        Schema: https://api.pollination.cloud/redoc#operation/list_runs
         """
         endpoint = (
             self
