@@ -217,7 +217,7 @@ One of the benefits of using Pollination is that you can run the same
 simulation parameterized across multiple models and settings simply by
 submitting different lists of inputs.
 
-We will use two models two show how to run the same simulation with two options
+We will use two models to show how to run the same simulation with two options
 for a facade system. The models are included as siblings to the Python source
 files in the [`rest-api`](./rest-api) folder.
 
