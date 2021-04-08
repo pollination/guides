@@ -141,7 +141,13 @@ Pollination-specific header `x-pollination-token`.
 We will use the library `httpx` to create a client that inserts this header for
 all requests. You will need to `pip install httpx`.
 
-The source for this script can be found in [`get_user.py`](./get_user.py).
+In this step, we will make a class `PollinationClient` which handles
+authentication and sets the base URL for all requests to the Pollination API
+server to reduce repetition. We can then add methods to this class for API
+actions that we wish to take that wrap the corresponding endpoint.
+
+The source for this script can be found in
+[`get_user.py`](./get_user.py).
 
 ```python
 import os
