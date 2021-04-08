@@ -66,15 +66,11 @@ production applications, for instance.
 
 Remember:
 
-<p align="center">
-
 :stop_sign: :warning:
 
 **API Keys are like passwords!**
 
 :warning: :stop_sign:
-
-</p>
 
 Once you generate it, store it in a secure location, as they can trigger
 billable actions to your account, and will not be visible once you navigate
