@@ -268,7 +268,7 @@ project = Payload.Create(
 #### Recipe Filter
 
 The recipe filters applied to a project affect which recipes are available to
-be used for future jobs. Here, we select a simple public recipe for calculating annual daylight factor which is provided by Ladybug Tools.
+be used for future jobs. Here, we select a simple public recipe for calculating daylight factor which is provided by Ladybug Tools.
 
 ```python
 recipe_filter = Payload.RecipeFilter(
