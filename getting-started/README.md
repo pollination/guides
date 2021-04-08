@@ -125,6 +125,22 @@ system.
 You will also need to set an environment variable named `POLLINATION_ORG` to
 the name of the organization or user that you copied from the URL bar.
 
+### Create a Virtual Environment
+
+All of the code is assumed to be running in side a Python virtual environment.
+Directions on how to use the standard `venv` module can be found
+[here][py-venv].
+
+[py-venv]: https://docs.python.org/3/library/venv.html
+
+Once you have created a virtual environment and activated it, you can run (from the `rest-api` directory):
+
+```console
+(my-good-virtual-environment) [user@host]$ pip install -r requirements.txt
+```
+
+This will install the necessary libraries to execute the code samples.
+
 ### Call the API
 
 The API documentation can be viewed as an
@@ -139,7 +155,7 @@ The API key from the previous section needs to be included in a
 Pollination-specific header `x-pollination-token`.
 
 We will use the library `httpx` to create a client that inserts this header for
-all requests. You will need to `pip install httpx`.
+all requests.
 
 In this step, we will make a class `PollinationClient` which handles
 authentication and sets the base URL for all requests to the Pollination API
