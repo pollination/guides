@@ -127,7 +127,7 @@ the name of the organization or user that you copied from the URL bar.
 
 ### Create a Virtual Environment
 
-All of the code is assumed to be running in side a Python virtual environment.
+All of the code is assumed to be running inside a Python virtual environment.
 Directions on how to use the standard `venv` module can be found
 [here][py-venv].
 
